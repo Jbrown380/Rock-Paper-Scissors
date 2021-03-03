@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+
+<h1>Rock, Paper, Scissors</h1>
+
+<div class="game">
+
+    <script>
+        // User choice
+        var userChoice = prompt("What will you choose> Rock, Paper, or Scissors?");
+        
+        var computerChoice = Math.random();
+        if (computerChoice < 0) {
+            computerChoice = "rock";
+        } else if(computerChoice <= 2) {
+            computerChoice = "paper";
+        } else {
+            computerChoice = "scissors";
+        }
+        var compare = function(choice1,choice2) {
+            if (choice1 === choice2) {
+                return "It's a tie! Want to retry?";
+            }
+            if (choice1 === "rock") {
+                if (choice2 === "scissors") {
+                    return "You win!";
+                } else {
+                    return "You lose.";
+                }
+            }
+            if (choice1 === "paper") {
+                if (choice2 === "rock") {
+                    return "You win!";
+                } else {
+                    return "You lose.";
+                }
+            }
+            if (choice1 === "scissors") {
+                if (choice2 === "rock") {
+                    return "You lose.";
+                } else {
+                    return "You win!";
+                }
+            }
+        };
+
+           var results = compare(userChoice,computerChoice);
+
+    </script>
+
+ </div>
+
+    </body>
+  </html>
